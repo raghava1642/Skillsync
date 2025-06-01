@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+     <title>SEM 3</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+      body {
+  background-color: #f3f4f7; /* Softer background color for better contrast */
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: #0e4399;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for effect */
+}
+
+h6 {
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  justify-content: center;
+  background-color: #0e4399;
+  padding: 8px;
+  margin: 20px 0;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Added shadow */
+}
+
+.au {
+  font-size: 27px;
+  color: #0c065c;
+  font-weight: bold;
+}
+
+p.pe {
+  text-align: center;
+  color: #0c065c;
+  text-decoration: underline;
+}
+
+.ac {
+  float: right;
+  margin-right: 30px;
+  margin-top: 10px;
+  color: #1a1c1a;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+  margin: 20px auto; /* Added margin for spacing */
+  text-align: center;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1); /* Table shadow */
+  background-color: #ffffff; /* Table background */
+  border-radius: 8px; /* Rounded corners */
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 20px;
+  transition: transform 0.3s, background-color 0.3s; /* Smooth hover effects */
+}
+
+th {
+  background-color: #235ceb;
+  color: white;
+}
+
+td {
+  background-color: #6f6363;
+  color: white;
+}
+
+td:hover {
+  background-color: #4a4a4a; /* Darken on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
+.logo {
+  height: 30px;
+  margin-right: 7px;
+}
+
+.con1 {
+  padding: 30px;
+  margin: 10px auto;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2); /* Softened shadow */
+  text-align: center;
+  background-color: white;
+  border-radius: 8px; /* Rounded corners */
+}
+
+.con1 p {
+  margin-bottom: 10px;
+  position: relative;
+  bottom: 30px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.card {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  margin: 10px;
+  border-radius: 13px;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Slight lift on hover */
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+.card img {
+  height: 150px;
+  border-radius: 13px 13px 0 0;
+  transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.card img:hover {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.card p {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #0c065c;
+}
+
+.middle {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Institute Header Section -->
+    <div class="con1">
+      <h1>
+        VASIREDDY VENKATADRI INSTITUTE OF TECHNOLOGY
+        <span class="au">(AUTONOMOUS)</span>
+      </h1>
+      <br>
+      <p class="pe">NAMBUR, GUNTUR - 522508, GUNTUR DIST(AP)</p>
+      <p class="ac">
+        <img
+          class="logo"
+          src="https://cdn5.vectorstock.com/i/1000x1000/44/64/blue-user-icon-of-profile-and-account-vector-42404464.jpg"
+          alt="User Logo"
+        />
+        N.Jagadeesh
+      </p>
+    </div>
+
+    <!-- PDF Download Section -->
+    <h6 class="middle">CLICK BELOW TO DOWNLOAD PDF'S</h6>
+    <div class="card-container">
+      <div class="card">
+        <a href="All units pages/javapage.html">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+            alt="Java Icon"
+          />
+        </a>
+        <p>Java Programming</p>
+      </div>
+      <div class="card">
+        <a href="https://example.com/pdf2">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/906/906334.png"
+            alt="DBMS Icon"
+          />
+        </a>
+        <p>Database Management Systems</p>
+      </div>
+      <div class="card">
+        <a href="https://example.com/pdf3">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2920/2920335.png"
+            alt="Mathematics III Icon"
+          />
+        </a>
+        <p>Mathematics III</p>
+      </div>
+      <div class="card">
+        <a href="https://example.com/pdf4">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/609/609806.png"
+            alt="Data Structures Icon"
+          />
+        </a>
+        <p>Data Structures</p>
+      </div>
+    </div>
+
+    <!-- Faculty Section -->
+    <h6 class="middle">MESSAGE WITH FACULTY</h6>
+    <div class="card-container">
+      <div class="card">
+        <a href="https://shirinbhanu.ccbp.tech/">
+          <img
+            src="https://cdn5.vectorstock.com/i/1000x1000/44/64/blue-user-icon-of-profile-and-account-vector-42404464.jpg"
+            alt="Java Faculty"
+          />
+        </a>
+        <p>JAVA</p>
+      </div>
+      <div class="card">
+        <a href="https://yesusekharam.ccbp.tech/">
+          <img
+            src="https://cdn5.vectorstock.com/i/1000x1000/44/64/blue-user-icon-of-profile-and-account-vector-42404464.jpg"
+            alt="DBMS Faculty"
+          />
+        </a>
+        <p>DBMS</p>
+      </div>
+      <div class="card">
+        <a href="https://narayanasir.ccbp.tech/">
+          <img
+            src="https://cdn5.vectorstock.com/i/1000x1000/44/64/blue-user-icon-of-profile-and-account-vector-42404464.jpg"
+            alt="M III Faculty"
+          />
+        </a>
+        <p>M III</p>
+      </div>
+      <div class="card">
+        <a href="https://loshma.ccbp.tech">
+          <img
+            src="https://cdn5.vectorstock.com/i/1000x1000/44/64/blue-user-icon-of-profile-and-account-vector-42404464.jpg"
+            alt="DS Faculty"
+          />
+        </a>
+        <p>Data Structures</p>
+      </div>
+    </div>
+    <!-- Table Section -->
+    <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Department</th>
+            <th>Faculty</th>
+            <th>Instructor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Java Programming</td>
+            <td>Computer Science</td>
+            <td>Asst Professor</td>
+            <td>Mr.Murali Krishna</td>
+          </tr>
+          <tr>
+            <td>Database Management System</td>
+            <td>Artificial Intelligence & Data Science</td>
+            <td>Professor</td>
+            <td>Dr.T.Sudhir</td>
+          </tr>
+          <tr>
+            <td>Mathematics III</td>
+            <td>Computer Science</td>
+            <td>Professor</td>
+            <td>Dr.K.Renuka Lakshmi</td>
+          </tr>
+          <tr>
+            <td>DS</td>
+            <td>Computer Science</td>
+            <td>Asst Professor</td>
+            <td>Ms.K.Rajani</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </body>
+  </html>

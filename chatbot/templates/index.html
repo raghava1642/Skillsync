@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Chat Application</title>
+    <!-- Bootstrap CSS -->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">-->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .chat {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-dark-mode {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .chat-body {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+        }
+
+        .chat-message {
+            margin: 10px 0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            width: fit-content;
+            max-width: 75%;
+            font-size: 14px;
+        }
+
+        .chat-message.user {
+            background-color: #007bff;
+            color: white;
+            align-self: flex-end;
+            border-top-right-radius: 0;
+        }
+
+        .chat-message.bot {
+            background-color: #e2e3e5;
+            color: black;
+            align-self: flex-start;
+            border-top-left-radius: 0;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .chat-footer input {
+            flex-grow: 1;
+            margin-right: 10px;
+            border-radius: 20px;
+            padding: 8px 12px;
+        }
+
+        .chat-footer button {
+            border-radius: 20px;
+            padding: 8px 15px;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .chat {
+            background-color: #1e1e1e;
+            color: white;
+        }
+
+        .dark-mode .chat-header {
+            background-color: #333;
+        }
+
+        .dark-mode .chat-footer {
+            background-color: #2a2a2a;
+            border-top: 1px solid #444;
+        }
+
+        .dark-mode .chat-message.user {
+            background-color: #0056b3;
+        }
+
+        .dark-mode .chat-message.bot {
+            background-color: #444;
+            color: white;
+        }
+
+        .dark-mode input {
+            background-color: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat">
+        <div class="chat-header">
+            <span>CHATBOT for students
+            </span>
+            <button class="toggle-dark-mode" id="dark-mode-toggle">🌙</button>
+        </div>
+
+        <div class="chat-body" id="chat-body">
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" class="form-control" id="message-input" placeholder="Type your message here...">
+            <button class="btn btn-primary" id="send-button">Send</button>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            
+            $('#send-button').click(function () {
+                sendMessage();
+            });
+
+            $('#message-input').keypress(function (e) {
+                if (e.which == 13) {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                var userMessage = $('#message-input').val().trim();
+                if (userMessage) {
+                    $('#chat-body').append('<div class="chat-message user">' + userMessage + '</div>');
+
+                    $('#message-input').val("");
+                    $('#chat-body').scrollTop($('#chat-body')[0].scrollHeight);
+
+                    $.ajax({
+    url: 'http://127.0.0.1:5000/chat',  // Change from '/chat' to full URL
+    type: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({ "message": userMessage }),
+    success: function (response) {
+        $('#chat-body').append('<div class="chat-message bot">' + response.response + '</div>');
+        $('#chat-body').scrollTop($('#chat-body')[0].scrollHeight);
+    },
+    error: function (xhr, status, error) {
+        console.error("Error: " + error);
+    }
+});
+
+                }
+            }
+
+            // Dark Mode Toggle
+            $('#dark-mode-toggle').click(function () {
+                $('body').toggleClass('dark-mode');
+            });
+        });
+    </script>
+</body>
+</html>
